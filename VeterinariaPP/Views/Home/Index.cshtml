@@ -1,0 +1,319 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    VeterinariaPP.Models.Usuario objeto = ((VeterinariaPP.Models.Usuario)Session["Usuario"]);
+}
+<br />
+<br />
+<br />
+<br />
+
+<div class="row colorinicio">
+
+    <h1 class="iniciar">Veterinaria Paw Patrol</h1>
+    @*<p class="lead iniciar">Bienvenido @(objeto.NombreUsuario)</p>*@
+
+</div>
+<div class="colorinicio2 container-fluid">
+
+    <div class="row" style="display:flex;align-items:center; justify-content:center">
+
+        @{if (objeto?.IdPrivilegio == 1)
+            {
+                <div class="col-md-3">
+                    <br />
+                    <div class="efect colorjumbo">
+                        <div>
+                            <a href="~/Veterinaria/PrintIngresos"><img class="img2" src="~/Imagenes/ganancias.png" /></a>
+                        </div>
+                        <div><p class="texto"><strong>Reporte de ganancias</strong></p></div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <br />
+                    <div class="efect colorjumbo">
+                        <div>
+                            <a href="~/Veterinaria/ListarVeterinarias"><img class="img2" src="~/Imagenes/veterinarias.png" /></a>
+                        </div>
+
+                        <div><p class="texto"><strong>Veterinarias</strong></p></div>
+                        <div><p id="div_veterinarias" class="valores"></p></div>
+                    </div>
+                </div>
+            }
+        }
+        @{if (objeto?.IdPrivilegio == 2)
+            {
+                <div class="col-md-3">
+                    <br />
+                    <div class="efect colorjumbo">
+                        <div>
+                            <a href="~/Servicio/PrintServicios"><img class="img2" src="~/Imagenes/ganancias.png" /></a>
+                        </div>
+                        <div><p class="texto"><strong>Reporte de ganancias</strong></p></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <br />
+                    <div class="efect colorjumbo">
+                        <div>
+                            <a href="~/Servicio/ListarServicios"><img class="img2" src="~/Imagenes/tratamiento.png" /></a>
+                        </div>
+                        <div><p class="texto"><strong>Servicios disponibles</strong></p></div>
+                        <div><p id="div_servicio" class="valores"></p></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <br />
+                    <div class="efect colorjumbo">
+                        <div>
+                            <a href="~/Cita/ListarCitas"><img class="img2" src="~/Imagenes/cita.png" /></a>
+                        </div>
+                        <div><p class="texto"><strong>Citas Pendientes</strong></p></div>
+                        <div><p id="div_citas" class="valores"></p></div>
+                    </div>
+                </div>
+            }
+        }
+        @{if (objeto?.IdPrivilegio == 3)
+            {
+
+
+                <div class="col-md-3">
+                    <br />
+                    <div class="efect colorjumbo">
+                        <div>
+                            <a href="~/Producto/PrintIngreso"><img class="img2" src="~/Imagenes/ganancias.png" /></a>
+                        </div>
+                        <div><p class="texto"><strong>Reporte de ganancias</strong></p></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <br />
+                    <div class="efect colorjumbo">
+                        <div>
+                            <a href="~/Producto/ListarProductos"><img class="img2" src="~/Imagenes/proveedor.png" /></a>
+                        </div>
+                        <div><p class="texto"><strong>Productos disponibles</strong></p></div>
+                        <div><p id="div_mascota" class="valores"></p></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <br />
+                    <div class="efect colorjumbo">
+                        <div>
+                            <a href="~/Producto/PrintEgreso"><img class="img2" src="~/Imagenes/ganancias.png" /></a>
+                        </div>
+                        <div><p class="texto"><strong>Reporte de egresos</strong></p></div>
+                    </div>
+                </div>
+            }
+        }
+        @{if (objeto?.IdPrivilegio == 4)
+            {
+
+                <div class="col-md-3">
+                    <br />
+                    <div class="efect colorjumbo">
+                        <div>
+                            <a href="~/Mascota/ListarMascotas"><img class="img2" src="~/Imagenes/mascota.png" /></a>
+                        </div>
+                        <div><p class="texto"><strong>Mis Mascotas</strong></p></div>
+                        <div><p id="div_mascota" class="valores"></p></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <br />
+                    <div class="efect colorjumbo">
+                        <div>
+                            <a href="~/Cita/ListarCitas"><img class="img2" src="~/Imagenes/cita.png" /></a>
+                        </div>
+                        <div><p class="texto"><strong>Citas Pendientes</strong></p></div>
+                        <div><p id="div_cita" class="valores"></p></div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+<style>
+
+    .grey-bg {
+        background-color: rgba(67, 81, 101, 0.69);
+    }
+
+    .iniciar {
+        text-align: center;
+        font-family: 'Satisfy', cursive;
+    }
+
+    .colorinicio {
+        background: rgba(88, 248, 166, 0.27);
+        padding: 10px 0;
+        border-radius: 10px;
+    }
+
+    .colorinicio2 {
+        background: #fff;
+    }
+
+    color_inicio {
+        text-align: center;
+        justify-content: center;
+        background: red;
+    }
+
+    .img2 {
+        text-align: center;
+        justify-content: center;
+        width: 50%;
+        padding-bottom: 30px;
+        padding-top: 50px;
+    }
+
+    .colorjumbo {
+        background: #fefbfb;
+        border: solid rgba(88, 248, 166, 0.60) 6px;
+        text-align: center;
+    }
+
+    .texto {
+        font-size: 30px;
+        color: rgba(67, 81, 101, 0.89);
+    }
+
+    .valores {
+        font-size: 25px;
+        color: rgba(57, 83, 118, 0.89);
+    }
+
+    .efect:hover {
+        transform: scale(1.06);
+        transition: 0.5s;
+    }
+
+    .efect {
+        transform: scale(1);
+        transition: 0.5s;
+    }
+</style>
+@section scripts{
+    <script>
+
+            $(document).ready(function () {
+
+                jQuery.ajax({
+                    url: '@Url.Action("ListaVeterinarias", "Veterinaria")',
+                    type: "GET",
+                    data: null,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+
+                        if (data.data != null) {
+                            $("#div_veterinarias").text(data.data.length)
+
+                        } else {
+                            $("#div_veterinarias").text("0");
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    },
+                    beforeSend: function () {
+
+                    },
+                });
+                
+                jQuery.ajax({
+                    url: '@Url.Action("ListaServicios", "Servicio")',
+                    type: "GET",
+                    data: null,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+
+                        if (data.data != null) {
+                            $("#div_servicio").text(data.data.length)
+
+                        } else {
+                            $("#div_servicio").text("0");
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    },
+                    beforeSend: function () {
+
+                    },
+                });
+                jQuery.ajax({
+                    url: '@Url.Action("Veterinaria", "Cita")',
+                    type: "GET",
+                    data: null,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+
+                        if (data.data != null) {
+                            $("#div_citas").text(data.data.length)
+
+                        } else {
+                            $("#div_citas").text("0");
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    },
+                    beforeSend: function () {
+
+                    },
+                });
+                jQuery.ajax({
+                    url: '@Url.Action("Dueño", "Cita")',
+                    type: "GET",
+                    data: null,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+
+                        if (data.data != null) {
+                            $("#div_cita").text(data.data.length)
+
+                        } else {
+                            $("#div_cita").text("0");
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    },
+                    beforeSend: function () {
+
+                    },
+                });
+                jQuery.ajax({
+                    url: '@Url.Action("ListaMascotas", "Mascota")',
+                    type: "GET",
+                    data: null,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+
+                        if (data.data != null) {
+                            $("#div_mascota").text(data.data.length)
+
+                        } else {
+                            $("#div_mascota").text("0");
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    },
+                    beforeSend: function () {
+
+                    },
+                });
+
+            })
+    </script>
+}

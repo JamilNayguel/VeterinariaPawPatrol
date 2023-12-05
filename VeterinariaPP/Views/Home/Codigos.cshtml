@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Verificar cuenta";
+
+}
+<br />
+<br />
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div style="text-align:center"><div class="alert alert-@ViewBag.alerta"> - - <b>@ViewBag.res</b> - - </div></div>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label("Codigo:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                <input class="form-control" id="Codigo" name="Codigo" type="number" required>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-12">
+                <input value="Guardar" class="btn btn-primary" type="submit" />
+                <a href="~/Home/EliminarCuenta" class="btn btn-danger"><span class="glyphicon glyphicon-remove"> Cancelar</span></a>
+            </div>
+        </div>
+    </div>
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+
+

@@ -1,0 +1,69 @@
+﻿@model VeterinariaPP.Models.Usuario
+@{
+    Layout = null;
+    ViewBag.Title = "Registrar Cuenta";
+
+}
+<br />
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div style="text-align:center"><div class="alert alert-@ViewBag.alerta"> - - <b>@ViewBag.res</b> - - </div></div>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label("Nombre Completo:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                <input class="form-control" id="NombreUsuario" name="NombreUsuario" required>
+                @Html.ValidationMessageFor(model => model.NombreUsuario, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Celular:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                <input class="form-control" id="Celular" name="Celular" type="number" maxlength="9" required>
+                @Html.ValidationMessageFor(model => model.Celular, "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+        <div class="form-group">
+            @Html.Label("Correo:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                <input class="form-control" id="Correo" name="Correo" type="email" required>
+                @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Contraseña:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                <input class="form-control" id="Contrasena" name="Contrasena" required>
+                @Html.ValidationMessageFor(model => model.Contrasena, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <input class="form-control" type="hidden" id="IdPrivilegio" name="IdPrivilegio" value="4">
+        <input class="form-control" type="hidden" id="IdVeterinaria" name="IdVeterinaria" value="1">
+
+        <input class="form-control" type="hidden" id="IdEstadoUsuario" name="IdEstadoUsuario" value="15">
+
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-12">
+                <a href="~/Home/AgregarDueño" class="btn btn-default"><span class="glyphicon glyphicon-refresh"> Limpiar</span></a>
+
+                <input value="Guardar" class="btn btn-primary" type="submit" />
+                <a href="~/Home/Principal" class="btn btn-danger"><span class="glyphicon glyphicon-remove"> Cancelar</span></a>
+            </div>
+        </div>
+    </div>
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+

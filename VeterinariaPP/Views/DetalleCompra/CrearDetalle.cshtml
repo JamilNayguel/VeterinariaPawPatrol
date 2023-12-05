@@ -1,0 +1,103 @@
+﻿@model IEnumerable<VeterinariaPP.Models.DetalleCompra>
+
+@{
+    ViewBag.Title = "CrearDetalle";
+    var productos = new List<VeterinariaPP.Models.Producto>();
+    string cadena = "SELECT * From DetalleCompra where IdCompra= (Select MAX(IdCompra) From Compra)";
+    var detalles = new List<VeterinariaPP.Models.DetalleCompra>();
+    using (var conexion = new VeterinariaPP.Models.DB())
+    {
+        detalles = conexion.Database.SqlQuery<VeterinariaPP.Models.DetalleCompra>(cadena).ToList();
+        productos = conexion.Producto.ToList();
+    }
+}
+
+<br />
+<br />
+<br />
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div style="text-align:center"><div class="alert alert-@ViewBag.alerta"> - - <b>@ViewBag.res</b> - - </div></div>
+        <hr />
+
+
+        <div class="form-group">
+            @Html.Label("Producto", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                <select class="form-control" id="IdProducto" name="IdProducto" size="1" required>
+                    <option value="">--Seleccionar--</option>
+                    @foreach (var i in productos)
+                    {
+                        if (i.Stock > 0)
+                        {
+                            <option value="@i.IdProducto">@i.NombreProducto</option>
+                        }
+
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Cantidad", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input class="form-control" id="Cantidad" name="Cantidad" required>
+            </div>
+        </div>
+
+
+        <br />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-12">
+                <input value="Agregar" class="btn btn-primary" type="submit" />
+                <a href="~/Compra/ListarCompras" class="btn btn-default">Terminar</a>
+            </div>
+        </div>
+
+    </div>
+}
+
+<table class="table table-bordered" id="tabladetallecompra">
+    <tr style="background: #383535 ;color:#fffafa">
+
+        <th>
+            Articulo
+        </th>
+        <th>
+            Cantidad
+        </th>
+        <th>
+            Total
+        </th>
+    </tr>
+
+    @foreach (var item in detalles)
+    {
+        <tr>
+
+            <td>
+                @foreach (var i in productos)
+                {
+                    if (item.IdProducto == i.IdProducto)
+                    {
+                        @i.NombreProducto
+                    }
+
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalDetalleCompra)
+            </td>
+        </tr>
+    }
+
+</table>

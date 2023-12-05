@@ -1,0 +1,156 @@
+﻿@model VeterinariaPP.Models.Compra
+
+@{
+    ViewBag.Title = "Detalles";
+    var productos = new List<VeterinariaPP.Models.Producto>();
+    var detalles = new List<VeterinariaPP.Models.DetalleCompra>();
+    var empleados = new List<VeterinariaPP.Models.Usuario>();
+    var proveedores = new List<VeterinariaPP.Models.Proveedor>();
+    using (var conexion = new VeterinariaPP.Models.DB())
+    {
+
+        productos = conexion.Producto.ToList();
+        empleados = conexion.Usuario.ToList();
+        proveedores = conexion.Proveedor.ToList();
+        detalles = conexion.DetalleCompra.ToList();
+    }
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="form-horizontal">
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.IdCompra)
+
+
+    <div class="form-group">
+        @Html.Label("Empleado", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-3">
+            <select class="form-control" readonly id="IdProveedor" name="IdProveedor" size="1" required>
+                <option value="">--Seleccionar--</option>
+                @{string seleccionempleado = "";}
+                @foreach (var i in proveedores)
+                {
+                    if (i.IdProveedor.Equals(Model.IdProveedor))
+                    {
+                        seleccionempleado = "Selected";
+                    }
+                    <option value="@i.IdProveedor" @seleccionempleado>@i.NombreProveedor</option>
+                    seleccionempleado = "";
+                }
+            </select>
+            @Html.ValidationMessageFor(model => model.IdProveedor, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Empleado", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-3">
+            <select class="form-control" readonly id="IdEmpleado" name="IdEmpleado" size="1" required>
+                <option value="">--Seleccionar--</option>
+                @{string seleccionProveedor = "";}
+                @foreach (var i in empleados)
+                {
+                    if (i.IdUsuario.Equals(Model.IdEmpleado))
+                    {
+                        seleccionempleado = "Selected";
+                    }
+                    <option value="@i.IdUsuario" @seleccionProveedor>@i.NombreUsuario</option>
+                    seleccionempleado = "";
+                }
+            </select>
+            @Html.ValidationMessageFor(model => model.IdEmpleado, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Nro de Comprobante", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-3">
+            <input class="form-control" readonly id="NumComprobante" name="NumComprobante" required value="@Model.NumComprobante">
+            @Html.ValidationMessageFor(model => model.NumComprobante, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Tipo de Pago", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-3">
+            <input class="form-control" readonly id="TipoPago" name="TipoPago" required value="@Model.TipoPago">
+            @Html.ValidationMessageFor(model => model.TipoPago, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Fecha", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-3">
+            <input class="form-control" readonly id="Fecha" name="Fecha" required value="@Model.Fecha">
+            @Html.ValidationMessageFor(model => model.Fecha, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Total", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-3">
+            <input class="form-control" readonly id="TotalCompra" name="TotalCompra" required value="@Model.TotalCompra">
+            @Html.ValidationMessageFor(model => model.TotalCompra, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-12">
+            <a href="~/Compra/ListarCompras" class="btn btn-primary"><span class="glyphicon glyphicon-backward"> Volver a la lista</span></a>
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-bordered" id="tabladetallecompra">
+    <tr style="background: #383535 ;color:#fffafa">
+
+        <th>
+            Producto
+        </th>
+        <th>
+            Cantidad
+        </th>
+        <th>
+            Total
+        </th>
+    </tr>
+
+    @foreach (var item in detalles)
+    {
+        if (item.IdCompra == Model.IdCompra)
+        {
+            <tr>
+
+                <td>
+                    @foreach (var i in productos)
+                    {
+                        if (item.IdProducto == i.IdProducto)
+                        {
+                            @i.NombreProducto
+                        }
+
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalDetalleCompra)
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

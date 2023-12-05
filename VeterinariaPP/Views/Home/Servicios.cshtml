@@ -1,0 +1,252 @@
+﻿@{ Layout = null;
+    ViewBag.Title = "Servicios"; }
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Paw Patrol</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <link href="img/favicon.ico" rel="icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    @Styles.Render("~/Recursos/lib/flaticon/font/flaticon.css")
+    @Styles.Render("~/Recursos/lib/owlcarousel/assets/owl.carousel.min.css")
+    @Styles.Render("~/Recursos/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css")
+    @Styles.Render("~/css/styles.css")
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-green navbar-dark py-3 py-lg-0 px-lg-5">
+            <a href="" class="navbar-brand d-block d-lg-none">
+                <h1 class="m-0 display-5 text-capitalize font-italic text-white"><span></span>Veterinaria Paw Patrol</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                <div class="navbar-nav mr-auto py-0">
+                    <a href="~/Home/Principal">
+                        <img src="~/Imagenes/logo.png"
+                             height="70">
+                    </a>
+                    <a href="~/Home/Principal" class="nav-item nav-link bg-green text-white">Inicio</a>
+                    <a href="~/Home/Servicios" class="nav-item nav-link bg-green text-white">Servicios</a>
+                    <a href="~/Home/Sucursales" class="nav-item nav-link bg-green text-white">Sucursales</a>
+                    <a href="http://telegram.me/Televeterinaria_bot" class="nav-item nav-link bg-green text-white">Ayuda en Linea</a>
+                </div>
+                <a href="~/Acceso/LoginUsuario" class="btn btn-lg btn-primary px-3 d-none d-lg-block bg-light text-dark">Iniciar Sesion</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+    <!-- Services Start -->
+    <div class="container-fluid bg-white pt-2">
+        <div class="container py-5">
+            <div class="d-flex flex-column text-center mb-5">
+                <h4 class="mb-3 text-primary">Nuestros Servicios</h4>
+                <h1 class="display-4 m-0"><span>Servicios para mascotas</span></h1>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="d-flex flex-column text-center bg-light mb-2 p-3 p-sm-5">
+                        <h3 class="flaticon-grooming display-3 font-weight-normal text-primary mb-3"></h3>
+                        <h3 class="mb-3">Cuidado de mascotas</h3>
+                        <p>Contamos con personal especializado para el cuidado de tus mascotas, con baños de burbujas y cortes de pelo.</p>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="d-flex flex-column text-center bg-light mb-2 p-3 p-sm-5">
+                        <h3 class="flaticon-cat display-3 font-weight-normal text-primary mb-3"></h3>
+                        <h3 class="mb-3">Realiza Consultas medicas</h3>
+                        <p>Agende una cita para poder realizar una consulta médica para sus mascotas con nuestros mejores especialistas en mascotas del país.</p>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="d-flex flex-column text-center bg-light mb-2 p-3 p-sm-5">
+                        <h3 class="flaticon-vaccine display-3 font-weight-normal text-primary mb-3"></h3>
+                        <h3 class="mb-3">Tratamientos de mascotas</h3>
+                        <p>Realizamos una variedad de tratamientos para diferentes tipos de mascotas, para darles una mejor calidad de vida.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+    <!-- Team star -->
+    <div class="container mt-5 pt-5 pb-3">
+        <style>
+            .color {
+                color: #ffffff;
+                border-color: #4bbfa0 !important;
+            }
+
+            .colordoc {
+                color: #4bbfa0;
+                font-style: italic;
+            }
+        </style>
+        <div class="d-flex flex-column text-center mb-5">
+            <h4 class="text-secondary mb-3">Nuestro Equipo</h4>
+            <h1 class="display-4 m-0"><span>Conozca a nuestros miembros</span></h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="team card position-relative overflow-hidden border-0 mb-4">
+                    <img class="card-img-top" src="~/Imagenes/team-1.jpg" alt="">
+                    <div class="card-body text-center p-0">
+                        <div class="team-text d-flex flex-column justify-content-center bg-light">
+                            <h5>Dra. Mollie Ross</h5>
+                        </div>
+                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
+                            <a class="btn btn-outline-secondary rounded-circle text-center mr-2 px-0 text-green color" style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-secondary rounded-circle text-center mr-2 px-0 text-green color" style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-secondary rounded-circle text-center mr-2 px-0 text-green color" style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-secondary rounded-circle text-center px-0 text-green color" style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="team card position-relative overflow-hidden border-0 mb-4">
+                    <img class="card-img-top" src="~/Imagenes/team-2.jpg" alt="">
+                    <div class="card-body text-center p-0">
+                        <div class="team-text d-flex flex-column justify-content-center bg-light">
+                            <h5>Dra. Jennifer Page</h5>
+                        </div>
+                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
+                            <a class="btn btn-outline-secondary rounded-circle text-center mr-2 px-0 color" style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-secondary rounded-circle text-center mr-2 px-0 color" style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-secondary rounded-circle text-center mr-2 px-0 color" style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-secondary rounded-circle text-center px-0 color" style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="team card position-relative overflow-hidden border-0 mb-4">
+                    <img class="card-img-top" src="~/Imagenes/team-3.jpg" alt="">
+                    <div class="card-body text-center p-0">
+                        <div class="team-text d-flex flex-column justify-content-center bg-light">
+                            <h5>Dra. Kate Glover</h5>
+                        </div>
+                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
+                            <a class="btn btn-outline-secondary rounded-circle text-center mr-2 px-0 color" style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-secondary rounded-circle text-center mr-2 px-0 color" style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-secondary rounded-circle text-center mr-2 px-0 color" style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-secondary rounded-circle text-center px-0 color" style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="team card position-relative overflow-hidden border-0 mb-4">
+                    <img class="card-img-top" src="~/Imagenes/team-4.jpg" alt="">
+                    <div class="card-body text-center p-0">
+                        <div class="team-text d-flex flex-column justify-content-center bg-light">
+                            <h5>Dra. Lilly Fry</h5>
+                            <h5 class="colordoc">Tarija</h5>
+                        </div>
+                        <div class="team-social d-flex align-items-center justify-content-center bg-dark">
+                            <a class="btn btn-outline-secondary rounded-circle text-center mr-2 px-0 color" style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-secondary rounded-circle text-center mr-2 px-0 color" style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-secondary rounded-circle text-center mr-2 px-0 color" style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-secondary rounded-circle text-center px-0 color" style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+    <footer>
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white mt-0 py-3 px-sm-3 px-md-5">
+            <div class="row pt-3">
+                <div class="col-lg-6 col-md-12 mb-3">
+                    <h1 class="mb-3 display-5 text-capitalize text-white"><span class="text-primary">Veterinaria </span> Paw Patrol</h1>
+                    <h3 class="mb-3 display-5 text-capitalize text-primary">Mision</h3>
+                    <p class="m-0">Brindar informacion y servicios de calidad para el cuidado y bienestar de las mascotas, fomentando la comunicacion efectiva con los propietarios.</p>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="row">
+                        <div class="col-md-8 mb-3">
+                            <h3 class="mb-3 display-5 text-capitalize text-primary">Vision</h3>
+                            <p class="m-0">Ser la referencia en linea para los amantes de los animales ofreciendo una experiencia interactiva y servicios veterinarios confiables, contribuyendo al bienestar de las mascotas y la comunidad en general.</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+
+                            <h5 class="text-primary mb-4">Enlaces</h5>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-1"></i>Inicio</a>
+                                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-1"></i>Acerca de</a>
+                                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-1"></i>Servicios</a>
+                                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-1"></i>Sucursales</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid text-white py-4 px-sm-3 px-md-5" style="background: #111111;">
+            <div class="row pt-3 pb-3">
+                <div class="col-md-8 text-center text-md-left mb-3 mb-md-0">
+                    <p class="m-0 text-white">
+                        &copy; <a class="text-white font-weight-bold" href="https://freewebsitecode.com">Veterinaria Paw Patrol</a>. Todos los derechos reservados. Diseñado por
+                        <a class="text-white font-weight-bold" href="https://freewebsitecode.com">JJJ Evil Corporation</a>
+                    </p>
+                </div>
+                <div class="col-md-4 text-center text-md-right">
+                    <ul class="nav d-inline-flex">
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-0" href="#">Privacidad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-0" href="#">Terminos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-0" href="#">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-0" href="#">Ayuda</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        <!-- Back Btn -->
+        <a href="#" class="btn btn-lg btn-primary back-to-top text-ligth "><i class="fa fa-angle-double-up"></i></a>
+
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        @Scripts.Render("~/Recursos/lib/js")
+        @Scripts.Render("~/Recursos/mail/js")
+        @Scripts.Render("~/Recursos/js/js")
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </footer>
+</body>
+
+
+
+</html>
+

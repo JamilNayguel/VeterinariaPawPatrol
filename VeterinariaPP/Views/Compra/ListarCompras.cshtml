@@ -1,0 +1,100 @@
+﻿@model IEnumerable<VeterinariaPP.Models.Compra>
+
+@{
+    ViewBag.Title = "ListarCompras";
+    var empleados = new List<VeterinariaPP.Models.Usuario>();
+    var proveedores = new List<VeterinariaPP.Models.Proveedor>();
+    using (var conexion = new VeterinariaPP.Models.DB())
+    {
+        empleados = conexion.Usuario.ToList();
+        proveedores = conexion.Proveedor.ToList();
+    }
+}
+
+
+
+<br />
+<br />
+<br />
+<br />
+<h2>Compras</h2>
+
+<div style="text-align: right" class="form-inline">
+    <div class="form-group">
+        <input style="text-align: right" class="form-control" type="text" placeholder="Buscar por direccion" name="dato_busqueda" id="dato_busqueda" />
+    </div>
+    <a class="btn btn-info" onclick="BuscarCompra()"><span class="glyphicon glyphicon-search"> Buscar</span></a>
+
+    <a href="AgregarCompra" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"> Nuevo</span></a>
+
+</div>
+<br />
+<table class="table table-bordered">
+    <tr style="        background-color: #373838;
+        color: #fffafa">
+        <th>
+            Proveedor
+        </th>
+        <th>
+            Empleado
+        </th>
+        <th>
+            Nro de Comprobante
+        </th>
+        <th>
+            Tipo de Pago
+        </th>
+        <th>
+            Fecha
+        </th>
+        <th>
+            Total
+        </th>
+        <th>
+            Opciones
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @foreach (var i in proveedores)
+                {
+                    if (item.IdProveedor == i.IdProveedor)
+                    {
+                        @i.NombreProveedor
+                    }
+
+                }
+            </td>
+            <td>
+                @foreach (var i in empleados)
+                {
+                    if (item.IdEmpleado == i.IdUsuario)
+                    {
+                        @i.NombreUsuario
+                    }
+
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumComprobante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoPago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalCompra)
+            </td>
+            <td>
+                <a class="btn btn-default" href="Detalles/@item.IdCompra"><span class="glyphicon glyphicon-eye-open"> Detalles</span></a>
+            </td>
+        </tr>
+    }
+
+</table>
+

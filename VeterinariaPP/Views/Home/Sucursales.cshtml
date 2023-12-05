@@ -1,0 +1,205 @@
+﻿@{ Layout = null;
+    ViewBag.Title = "Sucursales"; }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Paw Patrol</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <link href="img/favicon.ico" rel="icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    @Styles.Render("~/Recursos/lib/flaticon/font/flaticon.css")
+    @Styles.Render("~/Recursos/lib/owlcarousel/assets/owl.carousel.min.css")
+    @Styles.Render("~/Recursos/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css")
+    @Styles.Render("~/css/styles.css")
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-green navbar-dark py-3 py-lg-0 px-lg-5">
+            <a href="" class="navbar-brand d-block d-lg-none">
+                <h1 class="m-0 display-5 text-capitalize font-italic text-white"><span>Veterinaria Paw Patrol</span></h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                <div class="navbar-nav mr-auto py-0">
+
+                    <a href="~/Home/Principal">
+                        <img src="~/Imagenes/logo.png"
+                             height="70">
+                    </a>
+                    <a href="~/Home/Principal" class="nav-item nav-link bg-green text-white">Inicio</a>
+                    <a href="~/Home/Servicios" class="nav-item nav-link bg-green text-white">Servicios</a>
+                    <a href="~/Home/Sucursales" class="nav-item nav-link bg-green text-white">Sucursales</a>
+                    <a href="http://telegram.me/Televeterinaria_bot" class="nav-item nav-link bg-green text-white">Ayuda en Linea</a>
+                </div>
+                <a href="~/Acceso/LoginUsuario" class="btn btn-lg btn-primary px-3 d-none d-lg-block bg-light text-dark">Iniciar Sesion</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+    <!-- Sucursales Start -->
+    <style>
+        .colorico {
+            color: #4bbfa0 !important;
+        }
+
+        .colori {
+            color: #4bbfa0 !important;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <div class="container-fluid bg-white pt-2">
+        <div class="d-flex flex-column text-center mb-5 pt-5">
+            <h4 class="text-primary mb-3">Nuestras Sucursales</h4>
+            <h1 class="display-4 m-0"><span>Es facil encontrarnos</span></h1>
+        </div>
+
+        <div class="row pb-3 p-3">
+
+            <div class="col-lg-4 mb-4">
+                <div class="card border-0 mb-2">
+                    <img class="card-img-top" src="~/Imagenes/sucursal-7.png" alt="">
+                    <div class="card-body bg-light p-4">
+                        <h4 class="card-title text-truncate text-center">En Moquegua</h4>
+                        <div class="d-flexmb-3">
+                            <small><i class="fa fa-map-marker-alt mr-2 colorico"></i> C. Lima y C. Ancash </small><br>
+                        </div>
+                        <p class="pt-2">Nos encontramos en la calle Lima a unos metros de la plaza de armas de Moquegua.</p>
+                        <a class="font-weight-bold colori" href="https://maps.app.goo.gl/i2cbPWB4Vv2LjYzZ9">Ver Ubicación</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card border-0 mb-2">
+                    <img class="card-img-top" src="~/Imagenes/sucursal-5.png" alt="">
+                    <div class="card-body bg-light p-4">
+                        <h4 class="card-title text-truncate text-center">En Ilo</h4>
+                        <div class="d-flexmb-3">
+                            <small><i class="fa fa-map-marker-alt mr-2 colorico"></i>C. La Limonita</small><br>
+                        </div>
+                        <p class="pt-2">Nos encontramos en Cuidad Nueva a unas cuadras del Parque del Minero en Pacocha.</p>
+                        <a class="font-weight-bold colori" href="https://maps.app.goo.gl/VDnuEiPh4P6WW3AL8">Ver Ubicación</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card border-0 mb-2">
+                    <img class="card-img-top" src="~/Imagenes/sucursal-6.png" alt="">
+                    <div class="card-body bg-light p-4">
+                        <h4 class="card-title text-truncate text-center">En Moquegua</h4>
+                        <div class="d-flexmb-3">
+                            <small><i class="fa fa-map-marker-alt mr-2 colorico"></i>Av. Simon Bolivar y C. 25 de Noviembre</small><br>
+                        </div>
+                        <p class="pt-2">Encuentranos subiendo por la Av. Simon Bolivar cerca de del estadio 25 de Noviembre.</p>
+                        <a class="font-weight-bold colori" href="https://maps.app.goo.gl/SgLJXyn8Yn1TdPYTA">Ver Ubicación</a>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="col-lg-4 mb-4">
+                <div class="card border-0 mb-2">
+                    <img class="card-img-top" src="~/Imagenes/sucursal.jpg" alt="">
+                    <div class="card-body bg-light p-4">
+                        <h4 class="card-title text-truncate text-center">Nueva sucursal Ilo Muy Pronto</h4>
+                        <div class="d-flexmb-3">
+                            <small><i class="fa fa-map-marker-alt mr-2 colorico"></i>C. Zepita y C. Jiron Ayacucho</small><br>
+                        </div>
+                        <p class="pt-2">Nuestra nueva sucursal estara ubicado a una cuadra de la Plaza de Armas de Ilo.</p>
+                        <a class="font-weight-bold colori" href="https://maps.app.goo.gl/hK89k7bg9123p4mY7">Ver en mapa</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sucursales End -->
+
+    <footer>
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white mt-0 py-3 px-sm-3 px-md-5">
+            <div class="row pt-3">
+                <div class="col-lg-6 col-md-12 mb-3">
+                    <h1 class="mb-3 display-5 text-capitalize text-white"><span class="text-primary">Veterinaria </span> Paw Patrol</h1>
+                    <h3 class="mb-3 display-5 text-capitalize text-primary">Mision</h3>
+                    <p class="m-0">Brindar informacion y servicios de calidad para el cuidado y bienestar de las mascotas, fomentando la comunicacion efectiva con los propietarios.</p>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="row">
+                        <div class="col-md-8 mb-3">
+                            <h3 class="mb-3 display-5 text-capitalize text-primary">Vision</h3>
+                            <p class="m-0">Ser la referencia en linea para los amantes de los animales ofreciendo una experiencia interactiva y servicios veterinarios confiables, contribuyendo al bienestar de las mascotas y la comunidad en general.</p>
+                        </div>
+                        <div class="col-md-4 mb-3">
+
+                            <h5 class="text-primary mb-4">Enlaces</h5>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-1"></i>Inicio</a>
+                                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-1"></i>Acerca de</a>
+                                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-1"></i>Servicios</a>
+                                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-1"></i>Sucursales</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid text-white py-4 px-sm-3 px-md-5" style="background: #111111;">
+            <div class="row pt-3 pb-3">
+                <div class="col-md-8 text-center text-md-left mb-3 mb-md-0">
+                    <p class="m-0 text-white">
+                        &copy; <a class="text-white font-weight-bold" href="https://freewebsitecode.com">Veterinaria Paw Patrol</a>. Todos los derechos reservados. Diseñado por
+                        <a class="text-white font-weight-bold" href="https://freewebsitecode.com">JJJ Evil Corporation</a>
+                    </p>
+                </div>
+                <div class="col-md-4 text-center text-md-right">
+                    <ul class="nav d-inline-flex">
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-0" href="#">Privacidad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-0" href="#">Terminos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-0" href="#">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-0" href="#">Ayuda</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        <!-- Back Btn -->
+        <a href="#" class="btn btn-lg btn-primary back-to-top text-ligth "><i class="fa fa-angle-double-up"></i></a>
+
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        @Scripts.Render("~/Recursos/lib/js")
+        @Scripts.Render("~/Recursos/mail/js")
+        @Scripts.Render("~/Recursos/js/js")
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </footer>
+</body>
+
+</html>
